@@ -1,0 +1,17 @@
+{
+  "name": "repro-lib-3",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/repro-lib-3/src",
+  "projectType": "library",
+  "implicitDependencies": ["shared-*"],
+  "tags": [],
+  "targets": {
+    "hello": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/repro-lib-3/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}
