@@ -429,6 +429,17 @@ class TaskHasherImpl {
         const projectConfig = (0, file_hasher_1.hashArray)([
             JSON.stringify({ ...p.data, files: undefined }),
         ]);
+
+        if (projectName.startsWith('repro-lib')) {
+          const { writeFileSync } = require('fs');
+          writeFileSync(
+            `ProjectConfiguration.${projectName}.${Date.now()}.json`,
+            JSON.stringify({ ...p.data, files: undefined }, undefined, 2),
+            'utf8'
+          );
+        }
+
+
         return {
             value: projectConfig,
             details: {

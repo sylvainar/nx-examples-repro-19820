@@ -1,0 +1,34 @@
+{
+  "name": "repro-lib",
+  "root": "libs/repro-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/repro-lib/src",
+  "projectType": "library",
+  "implicitDependencies": [
+    "shared-assets",
+    "shared-product-state",
+    "shared-e2e-utils",
+    "shared-cart-state",
+    "shared-header",
+    "shared-product-types",
+    "shared-jsxify",
+    "shared-product-data",
+    "shared-product-ui",
+    "shared-styles"
+  ],
+  "tags": [],
+  "targets": {
+    "hello": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/repro-lib/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "configurations": {}
+    }
+  }
+}

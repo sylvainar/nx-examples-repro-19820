@@ -1,6 +1,10 @@
 # TO REPRODUCE
 
 ```bash
+# Disable nx daemon, force usage of InProcessTaskHasher
+export NX_DAEMON=false
+
+# Copy our patched task hasher with print statements.
 yarn patch-task-hasher
 
 # Run once.
